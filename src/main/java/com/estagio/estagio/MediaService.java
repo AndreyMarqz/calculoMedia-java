@@ -12,7 +12,7 @@ public class MediaService {
         } else if (media < 5.0) {
             return request.getNome() + ", você foi reprovado.";
         } else {
-            return request.getNome() + ", você não atingiu a nota de corte e foi reprovado.";
+            return request.getNome() + ", você não atingiu a nota de corte e está de exame.";
         }
     }
 }

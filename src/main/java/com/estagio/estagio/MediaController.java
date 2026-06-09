@@ -3,6 +3,7 @@ package com.estagio.estagio;
 import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import jakarta.validation.Valid;
 
 @RestController
 public class MediaController {
@@ -13,7 +14,7 @@ public class MediaController {
     }
 
     @PostMapping("/calcular-media")
-    public String calcularMedia(@RequestBody MediaRequest request) {
+    public String calcularMedia(@Valid @RequestBody MediaRequest request) {
         return mediaService.calcularResultado(request);
     }
 
