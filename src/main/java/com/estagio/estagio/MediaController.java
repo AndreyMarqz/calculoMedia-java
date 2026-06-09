@@ -23,4 +23,14 @@ public class MediaController {
         return LocalDateTime.now()
             .format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
     }
+
+    @GetMapping("/buscar-aluno")
+    public String buscarAluno(@RequestParam String nome){
+        return "Exibindo dados do aluno: " + nome;
+    }
+
+    @PutMapping("/atualizar-aluno/{id}")
+    public String atualizarAluno(@PathVariable Long id, @RequestBody MediaRequest request) {
+        return "Aluno " + id + " atualizado com sucesso.";
+    }
 }
